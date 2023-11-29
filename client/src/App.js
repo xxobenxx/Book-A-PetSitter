@@ -6,7 +6,7 @@ import './App.css';
 import SignIn from './views/SignIn';
 import SignUp from './views/SignUp';
 import Home from './views/Home';
-import HowItWorks from './views/HIW';
+import Becomeasitter from './views/BAS';
 import Help from './views/Help';
 import Contact from './views/Contact';
 import Navbar from './components/Navbar';
@@ -25,7 +25,7 @@ function App  ()  {
         <Route path ='/' element={<Home/>} />
         <Route path ='/signin' element={<SignIn/>} />
         <Route path ='/signup' element={<SignUp />} />
-        <Route path ='/howitworks' element={<HowItWorks/>} />
+        <Route path ='/becomeasitter' element={<Becomeasitter/>} />
         <Route path ='/help' element={<Help/>} />
         <Route path ='/contact' element={<Contact/>} />
        </Routes>

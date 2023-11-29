@@ -1,43 +1,72 @@
-import React from 'react'
+import React, { useState } from "react";
+
+
+
 const ContactForm = () => {
-  const [formStatus, setFormStatus] = React.useState('Send')
-  const onSubmit = (e) => {
-    e.preventDefault()
-    setFormStatus('Submitting...')
-    const { name, email, message } = e.target.elements
-    let conFom = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    }
-    console.log(conFom)
-  }
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("Name:", email, "Message:" , message);
+    };
+
+
+
   return (
-    <div className="container mt-5">
-      <h2 className="mb-3">React Contact Form Component Example</h2>
+    <div className="contactContainer">
+
+      <div className="titleContainer">
+      Contact Us
+    </div>
+    <br />
+
+
       <form onSubmit={onSubmit}>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="name">
-            Name
-          </label>
-          <input className="form-control" type="text" id="name" required />
-        </div>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="email">
-            Email
-          </label>
-          <input className="form-control" type="email" id="email" required />
-        </div>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="message">
-            Message
-          </label>
-          <textarea className="form-control" id="message" required />
-        </div>
-        <button className="btn btn-danger" type="submit">
-          {formStatus}
-        </button>
-      </form>
+
+      <div className={"inputContainer"}>
+    <input
+    type="name"
+    placeholder="Name"
+    value={name}
+    onChange={(e) => setName(e.target.value)}
+    required
+    className={"inputBox"}
+    />
+    </div>
+    <br />
+
+
+    <div className={"inputContainer"}>
+    <input
+    type="email"
+    placeholder="Enter email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    required
+    className={"inputBox"}
+    />
+    </div>
+    <br />
+
+
+    <div className={"inputContainer"}>
+    <input
+    type="message"
+    placeholder="Enter your message here"
+    value={message}
+    onChange={(e) => setMessage(e.target.value)}
+    required
+    className={"messageBox"}
+    />
+    </div>
+    <br />
+        
+    <div >
+    <button type=" submit">Submit</button>
+    </div>
+    </form>
     </div>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const HowItWorks = ()=> {
+const Becomeasitter = ()=> {
 
     return ( <div>
-    <h1>I am HIW</h1>
+    <h1>I am BAS</h1>
     
     
     <h1> Initial Test with Sign In Page </h1>
@@ -14,4 +14,4 @@ const HowItWorks = ()=> {
     }
 
 
-export default HowItWorks;
+export default Becomeasitter;

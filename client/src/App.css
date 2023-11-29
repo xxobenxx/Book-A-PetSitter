@@ -163,6 +163,29 @@ align-items: flex-start;
   list-style: none;
 }
 
+.contactContainer {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+background-image: url(https://source.unsplash.com/random?wallpapers/touch);
+background-size: auto;
+background-repeat: no-repeat;
+background-position: center;
+
+}
+
+.messageBox {
+  height: 80px;
+  width: 400px;
+  font-size: large;
+  border-radius: 8px;
+  border: 1px solid grey;
+  padding-left: 8px;
+}
+
 /* .navbar ul:hover {
   cursor: pointer;
   justify-content:space-between;
