@@ -1,32 +1,76 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
+const Navbar = ()=>{
+  return (
+    <div className='navbar'>
 
-const Navbar = (props)=>{
-    return <div className='navbar'>
+  <NavLink to={'/'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
+         Home 
+ </NavLink>
 
-                <ul onClick={ (e)=>props.selectPage(e.target.textContent) }>
-                  
-                 
-                  <div className='navbar1'>
+  <NavLink to={'/howitworks'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
+        How It Works?
+  </NavLink>
 
-                  <li>Home </li>
-                  <li>Our Services  </li>
-                  <li>Search Sitters </li>
-                  
-                  </div>          
-                  
-                  
-                  <div className='navbar2'>
-                  <li>Sign In</li>
-                  <li>Sign Up</li>
-                  <li>Become a Pet Sitter</li>
+  <NavLink to={'/signin'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
+        Sign In
+ </NavLink>
 
-                  </div>
-                  
-                
-                  </ul>
-                
-                
-            </div>
+  <NavLink to={'/signup'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
+        Sign Up
+  </NavLink>
+
+  <NavLink to={'/contact'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
+        Contact Us
+  </NavLink>
+
+  <NavLink to={'/help'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
+        Help
+  </NavLink>
+  
+  </div>
+  )
 }
-export default Navbar
+  let styles = {
+    activeLink:{
+      color:'orange'
+    }, 
+    defaultLink:{
+      color:'blue'
+    }
+  };
+
+export default Navbar;
+
+
+
+
+// const Navbar = (props)=>{
+//   return <div className='navbar'>
+
+//               <ul onClick={ (e)=>props.selectPage(e.target.textContent) }>
+                
+               
+//                 <div className='navbar1'>
+
+//                 <li>Home</li>
+//                 <li>Our Services</li>
+//                 <li>Search Sitters</li>
+                
+//                 </div>          
+                
+                
+//                 <div className='navbar2'>
+//                 <li>Sign In</li>
+//                 <li>Sign Up</li>
+//                 <li>Become a Pet Sitter</li>
+
+//                 </div>
+                
+              
+//                 </ul>
+              
+              
+//           </div>
+// }

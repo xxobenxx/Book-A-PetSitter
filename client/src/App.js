@@ -1,34 +1,35 @@
-import React, { useState } from 'react';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
-import Home from './components/Home';
+import { useEffect, useState } from 'react';
+
+import SignIn from './views/SignIn';
+import SignUp from './views/SignUp';
+import Home from './views/Home';
+import HowItWorks from './views/HIW';
+import Help from './views/Help';
+import Contact from './views/Contact';
 import Navbar from './components/Navbar';
 
-
-
-
-
-
-// import About from './components/About';
-// import Contacts from './components/Contacts';
-// import Profile from './components/Profile';
-// import Footer from './components/Footer';
-
-const App = () => {
-  const [ page, setPage ] = useState('');
-  const renderPages = (page) => {
-      setPage(page);
-      console.log(page);
-  };
-
+function App  ()  {
+  
   
   return (
       <div className="App">
-        <Navbar selectPage={renderPages} />
-  
-        {page === 'Home' ? <Home /> : page === 'Sign In' ? <SignIn /> : page === 'Sign Up' ? <SignUp /> : <Home />}
-          
+       
+      <Router>
+      <Navbar/>
+      <header></header>
+       <Routes>
+        <Route path ='/' element={<Home/>} />
+        <Route path ='/signin' element={<SignIn/>} />
+        <Route path ='/signup' element={<SignUp />} />
+        <Route path ='/howitworks' element={<HowItWorks/>} />
+        <Route path ='/help' element={<Help/>} />
+        <Route path ='/contact' element={<Contact/>} />
+       </Routes>
+      </Router>
+        
+    
       </div>
   );
 };
