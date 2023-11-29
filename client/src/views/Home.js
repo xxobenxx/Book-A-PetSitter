@@ -1,17 +1,36 @@
 import React from 'react'
 
 
-const Home = ()=> {
 
-    return ( <div>
-    <h1>I am Home</h1>
+const Home = ()=>(
+    <div className={"mainContainer"}>
+
+    <div className="bckgrndimage">
     
-    
-    <h1> Initial Test with Sign In Page </h1>
-        
+    <div className="imagetext">
+    <h1> Book Trusted sitters and dogwalkers in your neighbourhood</h1>
+    <br />
+
+        <button type="submit" class="btn">Book now</button>
+        </div>
     </div>
-    )
-    }
+    
+    <div className="background">
+    <div className="second">
+    <h2> Where we are </h2>
+    <a href="#top">Back to Top</a>
+    </div> </div>
+    
+    </div>)
+    
+    
+
+
+     
+    
+    
+    
+    
 
 
 export default Home;

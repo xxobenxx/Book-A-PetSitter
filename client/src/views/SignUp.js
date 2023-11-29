@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 
 const Signup = () => {
@@ -51,7 +51,7 @@ const Signup = () => {
     <div className={"inputContainer"}>
     <input
     type="password"
-    placeholder="Enter confirm password"
+    placeholder="Confirm password"
     value={confirmPassword}
     onChange={(e) => setConfirmPassword(e.target.value)}
     required

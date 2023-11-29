@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
-import { useEffect, useState } from 'react';
+
+
 
 import SignIn from './views/SignIn';
 import SignUp from './views/SignUp';
@@ -9,6 +10,7 @@ import HowItWorks from './views/HIW';
 import Help from './views/Help';
 import Contact from './views/Contact';
 import Navbar from './components/Navbar';
+import Footer from './components/footer';
 
 function App  ()  {
   
@@ -28,9 +30,14 @@ function App  ()  {
         <Route path ='/contact' element={<Contact/>} />
        </Routes>
       </Router>
+      <Footer />
         
     
       </div>
   );
+
+  
+      
+   
 };
 export default App;
