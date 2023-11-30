@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 
 
-const Signup = () => {
+
+
+    const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -12,6 +14,8 @@ const Signup = () => {
     console.log("Signup email:", email, "password:" , password);
     };
 
+
+
     return (
     <div className={"mainContainer"}>
 
@@ -19,6 +23,8 @@ const Signup = () => {
     Sign up
     </div>
     <br />
+
+    
     
     <form onSubmit={handleSignup}>
 
@@ -69,7 +75,3 @@ const Signup = () => {
 
 
 export default Signup;
-
-
-
-

@@ -9,10 +9,6 @@ const Navbar = ()=>{
          Home 
  </NavLink>
 
-  <NavLink to={'/becomeasitter'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
-        Become a Sitter
-  </NavLink>
-
   <NavLink to={'/signin'} style={({isActive})=> isActive ? styles.activeLink : styles.defaultLink}>
         Sign In
  </NavLink>
