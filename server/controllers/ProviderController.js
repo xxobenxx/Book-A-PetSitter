@@ -52,7 +52,7 @@ const jwt_secret = process.env.JWT_SECRET;
       return res.json({ ok: false, message: "Invalid email provided" });
     }
     try {
-      const user = await User.findOne({ email });
+      const user = await Provider.findOne({ email });
       if (!user) return res.json({ ok: false, message: "Invalid user provided" });
       const match = await argon2.verify(user.password, password);
       if (match) {

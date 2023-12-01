@@ -2,7 +2,8 @@
     app = express(),
     mongoose = require('mongoose')
     var cors = require('cors')
-
+    require('dotenv').config()
+    
     const clientRoute = require('./routes/clientRoute')
     const providerRoute = require('./routes/providerRoute')
 

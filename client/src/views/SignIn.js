@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { URL } from "../config";
+import { URL } from  '../config'
 import { useNavigate } from "react-router-dom";
 // import jwt from 'jsonwebtoken'
 // react-scripts from version 5 shipped with react 18 is not supporting jsonwebtoken so we need to use alternative like jose to decode the JWT token in the client
@@ -26,7 +26,7 @@ const Signin = (props) => {
       debugger;
       e.preventDefault();
       try {
-        const response = await axios.post(`http://localhost:4001/provider/login`, {
+        const response = await axios.post(`${URL}/provider/login`, {
           email: form.email.toLowerCase(),
           password: form.password,
         });
