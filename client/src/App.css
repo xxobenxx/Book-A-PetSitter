@@ -3,7 +3,7 @@
   justify-content: space-around;
   align-items: center;
   height: 5vh;
-  background-color: gainsboro;
+  background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
   border-bottom: gray 2px solid;}
 
 .navbar a {
@@ -66,6 +66,7 @@ background-image: url(https://source.unsplash.com/random?wallpapers/pets);
 background-size: auto;
 background-repeat: no-repeat;
 background-position: center;
+margin: 10px;
 }
 
 .titleContainer {
@@ -156,6 +157,10 @@ button {
     cursor: pointer;
 }
 
+footer {
+  border-top:grey 2px solid;
+}
+
 footer ul{
   display: flex;
   flex-direction: column;
@@ -169,11 +174,13 @@ align-items: flex-start;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin: 10px;
 
 background-image: url(https://source.unsplash.com/random?wallpapers/touch);
 background-size: auto;
 background-repeat: no-repeat;
 background-position: center;
+
 
 }
 
@@ -185,6 +192,23 @@ background-position: center;
   border: 1px solid grey;
   padding-left: 8px;
 }
+
+.helpwrapper{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.helppic {
+  display: flex;
+  justify-content: left;
+  margin: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: left;
+}
+
 
 /* .navbar ul:hover {
   cursor: pointer;

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 
 
 
@@ -8,7 +9,7 @@ const Home = ()=>(
     <div className="bckgrndimage">
     
     <div className="imagetext">
-    <h1> Book Trusted sitters and dogwalkers in your neighbourhood</h1>
+    <h1 style={{ color: 'white' }}> Book Trusted sitters and dogwalkers in your neighbourhood</h1>
     <br />
 
         <button type="submit" class="btn">Book now</button>
@@ -17,11 +18,12 @@ const Home = ()=>(
     
     <div className="background">
     <div className="second">
-    <h2> Where we are </h2>
-    <a href="#top">Back to Top</a>
+    <h2> </h2>
+    
     </div> </div>
     
-    </div>)
+    </div>
+)
     
     
 
