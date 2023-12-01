@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const providerSchema = new Schema({
   name: {
         type: String,
-        unique: true,
-        required: true,
+
+       
       },
 
   email: {
@@ -20,24 +20,24 @@ const providerSchema = new Schema({
 
   services: [
     {
-    service :{ type: String,unique: true,required: true},
-    price:{  type: Number,required: true},
+    service :{ type: String},
+    price:{  type: Number},
     _id:false
   }
 ],    
   address: {
          type: String,
-        unique: true,
-        required: true,
+
+        
   },
       description: {
       type: String,
-      required: true,
+      
       },
 
   certification : {
       type: Boolean,
-      required: true,
+  
   },
       
 },

@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const clientSchema = new Schema({
+
+const clientSchema = new mongoose.Schema({
   name: {
         type: String,
         unique: true,
-        required: true,
       },
 
   email: {
@@ -22,7 +21,6 @@ const clientSchema = new Schema({
   address: {
          type: String,
         unique: true,
-        required: true,
       },
 },
 

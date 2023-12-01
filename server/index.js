@@ -1,10 +1,12 @@
     const express = require('express'), 
     app = express(),
     mongoose = require('mongoose')
+    var cors = require('cors')
 
     const clientRoute = require('./routes/clientRoute')
     const providerRoute = require('./routes/providerRoute')
 
+    app.use(cors())
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())

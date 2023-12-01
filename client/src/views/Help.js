@@ -27,7 +27,7 @@ export default class App extends Component {
     return (
       <div>
         <Faq data={data}/>
-      </div>
+        </div>
     )
   }
 }
