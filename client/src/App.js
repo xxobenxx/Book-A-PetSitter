@@ -66,7 +66,6 @@ function App  ()  {
        
       <Router>
       <Navbar isLoggedIn={isLoggedIn} />
-      <header></header>
        <Routes>
         <Route path ='/' element={<Home/>} />
 

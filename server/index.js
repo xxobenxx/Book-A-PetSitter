@@ -1,3 +1,5 @@
+
+
     const express = require('express'), 
     app = express(),
     mongoose = require('mongoose')
@@ -6,6 +8,7 @@
     
     const clientRoute = require('./routes/clientRoute')
     const providerRoute = require('./routes/providerRoute')
+ const authRoute = require('./routes/authRoutes')
 
     app.use(cors())
 
@@ -21,9 +24,10 @@ async function connecting(){
     }
     }
 
-
+    app.use('/auth', require('./routes/authRoutes'));
     app.use('/client', require('./routes/clientRoute'));
     app.use('/provider', require('./routes/providerRoute'));
+    
 
 connecting().then(()=>{
     app.listen(4001, () => console.log(`listening on port 4001`))

@@ -1,7 +1,6 @@
 {
   "name": "finalproject",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +17,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.1",
-    "react-switch": "^7.0.0",
     "validator": "^13.11.0"
-  }
+  },
+  "description": ""
 }
