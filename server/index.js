@@ -8,7 +8,7 @@
     
     const clientRoute = require('./routes/clientRoute')
     const providerRoute = require('./routes/providerRoute')
- const authRoute = require('./routes/authRoutes')
+     const authRoute = require('./routes/authRoutes')
 
     app.use(cors())
 
