@@ -39,6 +39,10 @@ const providerSchema = new Schema({
       type: Boolean,
   
   },
+  picture: {
+    type: String,
+    
+    },
       
 },
 

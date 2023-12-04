@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const clientSchema = new mongoose.Schema({
   name: {
         type: String,
-        unique: true,
+        
       },
 
   email: {
@@ -20,7 +20,7 @@ const clientSchema = new mongoose.Schema({
      
   address: {
          type: String,
-        unique: true,
+       
       },
 },
 

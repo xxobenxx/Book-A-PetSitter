@@ -9,26 +9,32 @@ import * as jose from "jose";
 
 
 const Signin = (props) => {
+
     const [form, setValues] = useState({
       email: "",
       password: "",
     });
   
-    const navigate = useNavigate();
-  
+
+
     const [message, setMessage] = useState("");
-  
+    
+    
+    const navigate = useNavigate();
     const handleChange = (e) => {
       setValues({ ...form, [e.target.name]: e.target.value });
     };
   
     const handleSubmit = async (e) => {
-      debugger;
+     
       e.preventDefault();
+
+
       try {
-        const response = await axios.post(`${URL}/provider/login`, {
+        const response = await axios.post(`${URL}/auth/login`, {
           email: form.email.toLowerCase(),
           password: form.password,
+      
         });
         setMessage(response.data.message);
         if (response.data.ok) {
@@ -41,7 +47,8 @@ const Signin = (props) => {
           );
           setTimeout(() => {
             props.login(response.data.token);
-            navigate("/dashboard");
+       
+            navigate(`/dashboard/${response.data.type}`);
           }, 2000);
         }
       } catch (error) {
@@ -93,69 +100,3 @@ const Signin = (props) => {
 }
     
         export default Signin;
-
- // const Signin = (props) => {
-//     const [email, setEmail] = useState("")
-//     const [password, setPassword] = useState("")
-//     const [emailError, setEmailError] = useState("")
-//     const [passwordError, setPasswordError] = useState("")
-//     const [message, setMessage] = useState("");
-
-//     const navigate = useNavigate();
-        
-//     const onButtonClick = () => {
-//         if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-//             setEmailError("Please enter a valid email")
-//             return
-//         }
-//         if (password.length < 7) {
-//             setPasswordError("The password must be 8 characters or longer")
-//             return
-//         }
-
-//         // Authentication calls will be made here...       
-        
-
-//     }
-
-//     return <div className={"mainContainer"}>
-//         <div className={"titleContainer"}>
-//             <div>Hello</div>
-//         </div>
-//         <br />
-
-//         <div className={"inputContainer"}>
-//             <input
-//                 value={email}
-//                 required
-//                 placeholder="your email here"
-//                 onChange={ev => setEmail(ev.target.value)}
-//                 className={"inputBox"} />
-//             <label className="errorLabel">{emailError}</label>
-//         </div>
-//         <br />
-
-//         <div className={"inputContainer"}>
-//             <input
-//                 value={password}
-//                 required
-
-//                 placeholder="your password here"
-//                 onChange={ev => setPassword(ev.target.value)}
-//                 className={"inputBox"} />
-//             <label className="errorLabel">{passwordError}</label>
-//         </div>
-//         <br />
-//         <div className={"inputContainer"}>
-//             <input
-//                 className={"inputButton"}
-//                 type="button"
-//                 onClick={onButtonClick}
-//                 value={"Sign in"} />
-//         </div>
-//     </div>
-// }
-/* <button
-                className={"inputButton"}
-                type="submit"
-                onSubmit={handleSubmit}>Sign In</button> */

@@ -1,4 +1,4 @@
-const Provider = require('../models/providerModel');
+// const Provider = require('../models/providerModel');
 const Clients = require('../models/clientModel');
 const argon2 = require("argon2"); 
 const jwt = require("jsonwebtoken");
@@ -19,19 +19,19 @@ const jwt_secret = process.env.JWT_SECRET;
       return res.json({ ok: false, message: "Invalid email" });
     }
     try {
-      const user = await User.findOne({ email });
+      const user = await Clients.findOne({ email });
       if (user) return res.json({ ok: false, message: "User exists!" });
       const hash = await argon2.hash(password, salt);
       // not salted, salt is appending a random string to a password to strengthen the hash
     //   const hash2 = await argon2.hash(password);
     //   // we cna see that hashes for salted and unsalted are different
       console.log("hash ==>", hash);
-      console.log("hash2 ==>", hash2);
+     
       const newUser = {
         email,
         password: hash,
       };
-      await User.create(newUser);
+      await Clients.create(newUser);
       res.json({ ok: true, message: "Successfully registered" });
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ const jwt_secret = process.env.JWT_SECRET;
       return res.json({ ok: false, message: "Invalid email provided" });
     }
     try {
-      const user = await User.findOne({ email });
+      const user = await Clients.findOne({ email });
       if (!user) return res.json({ ok: false, message: "Invalid user provided" });
       const match = await argon2.verify(user.password, password);
       if (match) {

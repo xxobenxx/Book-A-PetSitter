@@ -43,7 +43,7 @@ function App  ()  {
   }, [token]);
 
   const login = (token) => {
-    debugger
+
     let decodedToken = jose.decodeJwt(token);
     // composing a user object based on what data we included in our token (login controller - jwt.sign() first argument)
     let user = {
@@ -73,7 +73,7 @@ function App  ()  {
           path="/login"
           element={
             isLoggedIn ? (
-              <Navigate to="/dashboard" />
+              <Navigate to="/dashboard/:type" />
             ) : (
               <SignIn login={login} />
             )
@@ -82,11 +82,11 @@ function App  ()  {
 
         <Route
           path="/register"
-          element={isLoggedIn ? <Navigate to="/dashboard" /> : <SignUp />}
+          element={isLoggedIn ? <Navigate to="/dashboard/:type" /> : <SignUp />}
         />
 
         <Route
-          path="/dashboard"
+          path="/dashboard/:type"
           element={
             !isLoggedIn ? (
               <Navigate to="/" />

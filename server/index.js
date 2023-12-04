@@ -6,9 +6,11 @@
     var cors = require('cors')
     require('dotenv').config()
     
-    const clientRoute = require('./routes/clientRoute')
-    const providerRoute = require('./routes/providerRoute')
-     const authRoute = require('./routes/authRoutes')
+    const authRoute = require('./routes/authRoutes')
+    // const clientRoute = require('./routes/clientRoute')
+    // const providerRoute = require('./routes/providerRoute')
+  
+    
 
     app.use(cors())
 
@@ -25,8 +27,9 @@ async function connecting(){
     }
 
     app.use('/auth', require('./routes/authRoutes'));
-    app.use('/client', require('./routes/clientRoute'));
-    app.use('/provider', require('./routes/providerRoute'));
+    // app.use('/client', require('./routes/clientRoute'));
+    // app.use('/provider', require('./routes/providerRoute'));
+    
     
 
 connecting().then(()=>{
