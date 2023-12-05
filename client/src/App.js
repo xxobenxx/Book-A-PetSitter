@@ -7,7 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import './App.css';
-// import { URL } from "./config";
+import { URL } from "./config";
 import * as jose from "jose";
 
 
@@ -26,13 +26,15 @@ function App  ()  {
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
 
   useEffect(() => {
+   
     const verify_token = async () => {
+
       try {
         if (!token) {
           setIsLoggedIn(false);
         } else {
           axios.defaults.headers.common["Authorization"] = token;
-          const response = await axios.post(`localhost:3040/users/verify_token`);
+          const response = await axios.post(`${URL}/auth/verify_token`);
           return response.data.ok ? login(token) : logout();
         }
       } catch (error) {
@@ -48,10 +50,12 @@ function App  ()  {
     // composing a user object based on what data we included in our token (login controller - jwt.sign() first argument)
     let user = {
       email: decodedToken.userEmail,
+      type: decodedToken.type
     };
     localStorage.setItem("token", JSON.stringify(token));
     localStorage.setItem("user", JSON.stringify(user));
     setIsLoggedIn(true);
+    setUser(user)
   };
   
   const logout = () => {
@@ -65,7 +69,7 @@ function App  ()  {
       <div className="App">
        
       <Router>
-      <Navbar isLoggedIn={isLoggedIn} />
+      <Navbar isLoggedIn={isLoggedIn} user={user} />
        <Routes>
         <Route path ='/' element={<Home/>} />
 

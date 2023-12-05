@@ -9,12 +9,11 @@ const Dashboard = (props) => {
   let navigate = useNavigate();
   const { type } = useParams();
 
-  const userType = props.user.type;
 
   if (type === 'client') {
-    return <ClientDashboard logout={props.logout} navigate={navigate} />;
+    return <ClientDashboard logout={props.logout}  />;
   } else if (type === 'provider') {
-    return <ProviderDashboard logout={props.logout} navigate={navigate} />;
+    return <ProviderDashboard logout={props.logout} user={props.user}  />;
   } else {
     return (
       <div className="dashboard">

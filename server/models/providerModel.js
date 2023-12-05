@@ -3,9 +3,13 @@ const Schema = mongoose.Schema;
 
 const providerSchema = new Schema({
   name: {
+        type: String,  
+      },
+      surname: {
         type: String,
-
-       
+      },
+      contactNumber: {
+        type: String,
       },
 
   email: {
@@ -21,7 +25,7 @@ const providerSchema = new Schema({
   services: [
     {
     service :{ type: String},
-    price:{  type: Number},
+    price:{  type: String},
     _id:false
   }
 ],    

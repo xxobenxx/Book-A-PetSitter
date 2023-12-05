@@ -26,7 +26,7 @@ const Signup = (props) => {
 	};
 
   const handleSubmit = async (e) => {
-		debugger
+		
 		e.preventDefault();
 
     try {

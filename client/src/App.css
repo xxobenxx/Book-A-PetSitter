@@ -207,7 +207,41 @@ background-position: center;
 .switchContainer {
   color: white;
 }
+.dashboard form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border:#3F5EFB 2px solid; 
+  height:auto;
+  width: 700px;
+ margin: 10px;
+ background-color: white;
+  
+}
 
+
+.dashboard h1 {
+  background-color: #61dafb;
+}
+.dashboard form input {
+padding: 0.4rem 0.8rem;
+border-radius: 0.4rem;
+}
+
+.dashboard form > * {
+  margin: 0.3rem auto;
+}
+
+.formButton {
+  border: none;
+    background:linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    color: white;
+    margin: 2px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
 
 /* .navbar ul:hover {

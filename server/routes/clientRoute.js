@@ -8,7 +8,7 @@ controller    = require('../controllers/ClientController');
 router.post('/register', controller.register);
 router.post('/login', controller.login);
 router.post('/verify_token', controller.verify_token);
-
+router.post('/update-client-info', controller.updateClientInfo);
 
 
 module.exports = router;

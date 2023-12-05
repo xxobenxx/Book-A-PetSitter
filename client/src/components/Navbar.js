@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-const Navbar = ({isLoggedIn}) => {
+const Navbar = ({isLoggedIn,user}) => {
 
   return (
     <div className="navbar">
@@ -55,7 +55,7 @@ const Navbar = ({isLoggedIn}) => {
     {isLoggedIn===true    
     && <>
       <NavLink  
-      to="/dashboard"
+      to= {`/dashboard/${user.type}`}
       style={ ({isActive}) => (
         isActive ? linkStyles.activeLink : linkStyles.defaultLink
         )}>

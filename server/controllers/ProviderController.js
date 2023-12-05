@@ -5,6 +5,14 @@ const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const jwt_secret = process.env.JWT_SECRET;
 
+
+
+
+
+
+
+
+
  const register = async (req, res) => {
     // this salt can be truly random with one of available npm packages
     const salt = "ela005698";
@@ -77,8 +85,40 @@ const jwt_secret = process.env.JWT_SECRET;
         : res.json({ ok: true, succ });
     });
   };
+
+  const updateProviderInfo = async (req, res) => {
+    const { name, surname, address, contactNumber, about, serviceType } = req.body;
+
+const userId = req.user.id;
+
+
+try {
+  const updatedProvider = await Provider.findByIdAndUpdate(
+    userId,
+    {
+      name,
+      surname,
+      address,
+      contactNumber,
+      about,
+      serviceType,
+    },
+    { new: true }
+  );
+
+  if (!updatedProvider) {
+    return res.json({ ok: false, message: "User not found" });
+  }
+
+  res.json({ ok: true, message: "User information updated", user: updatedProvider });
+
+} catch (error) {
+  console.log(error);
+  res.json({ ok: false, error });
+}
+};
   
-  module.exports = { register, login, verify_token };
+  module.exports = { register, login, verify_token, updateProviderInfo };
 
 
   

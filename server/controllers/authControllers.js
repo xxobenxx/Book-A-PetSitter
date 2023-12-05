@@ -105,7 +105,7 @@ type = 'client'
       const match = await argon2.verify(user.password, password);
       if (match) {
         // once user is verified and confirmed we send back the token to keep in localStorage in the client and in this token we can add some data -- payload -- to retrieve from the token in the client and see, for example, which user is logged in exactly. The payload would be the first argument in .sign() method. In the following example we are sending an object with key userEmail and the value of email coming from the "user" found in line 47
-        const token = jwt.sign({ userEmail: user.email }, jwt_secret, {
+        const token = jwt.sign({ userEmail: user.email, type:type }, jwt_secret, {
           expiresIn: "1h",
         }); //{expiresIn:'365d'}
         // after we send the payload to the client you can see how to get it in the client's Login component inside handleSubmit function
@@ -115,6 +115,51 @@ type = 'client'
       res.json({ ok: false, error });
     }
   };
+
+
+  const getCurrentUser = async (req, res) => {  
+try {
+  let {email, type} = req.body;
+  let user 
+if(type === 'client'){
+user = await Clients.findOne({email})
+} else if(type === 'provider'){ 
+user = await Provider.findOne({email}) 
+}
+res.json({ ok: true, user });
+  console.log(email, type);
+} catch (error) {
+  res.json({ ok: false, error });
+}
+
+  }
+
+
+  const updateUser = async (req, res) => {
+const { name, surname, address, contactNumber, description, services, email,type } = req.body;
+
+
+try {
+  let update
+  if(type === 'client'){
+update = await Clients.findOneAndUpdate({email}, {name, surname, address, contactNumber, description, services}, {new: true})
+  } else if(type === 'provider'){
+ await Provider.findOneAndUpdate({email}, {name, surname, address, contactNumber, description, services:[]})
+update = await Provider.updateOne({email}, {$push: {
+    services: {
+      $each:[{service:'x',price:'25'}]
+    }
+  }
+  },{upsert:true})
+  }
+  console.log(update);
+  res.json({ ok: true, message: "User information updated" ,update});
+} catch (error) {
+  console.log(error);
+  res.json({ ok: false, error });
+}
+};
+
   
   const verify_token = (req, res) => {
     console.log(req.headers.authorization);
@@ -126,7 +171,7 @@ type = 'client'
     });
   };
   
-  module.exports = { register, login, verify_token };
+  module.exports = { register, login, verify_token ,getCurrentUser, updateUser};
 
 
 

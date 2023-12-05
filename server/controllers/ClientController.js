@@ -1,4 +1,3 @@
-// const Provider = require('../models/providerModel');
 const Clients = require('../models/clientModel');
 const argon2 = require("argon2"); 
 const jwt = require("jsonwebtoken");
@@ -77,7 +76,37 @@ const jwt_secret = process.env.JWT_SECRET;
         : res.json({ ok: true, succ });
     });
   };
-  
+
+  const updateClientInfo = async (req, res) => {
+    const { name, surname, address, contactNumber, about, serviceType } = req.body;
+
+const userId = req.user.id;
+
+try {
+  const updatedClient= await Clients.findByIdAndUpdate(
+    userId,
+    {
+      name,
+      surname,
+      address,
+      contactNumber,
+      iAmAnOwnerOf,
+    },
+    { new: true }
+  );
+
+  if (!updatedClient) {
+    return res.json({ ok: false, message: "User not found" });
+  }
+
+  res.json({ ok: true, message: "User information updated", user: updatedClient });
+
+} catch (error) {
+  console.log(error);
+  res.json({ ok: false, error });
+}
+};
+
   module.exports = { register, login, verify_token };
 
 
