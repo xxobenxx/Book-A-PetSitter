@@ -104,15 +104,15 @@ const handleSubmit = async (e) => {
   <option value="goldfish">Goldfish</option>
 </select>
 
-<button type="button" onClick={
-()=>{
+<button className="addButton" type="button" onClick={
+  ()=>{
   console.log(form.services);
   let copy = [...form.services]
   copy.push({service:service, price:""})
   setValues(prevState=>({...prevState, services:copy}))
 }
 
-} >Add</button>
+}>Add</button>
 
 </div>
 

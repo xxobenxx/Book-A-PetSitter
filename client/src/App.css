@@ -157,6 +157,17 @@ button {
     cursor: pointer;
 }
 
+.addButton {
+  border: none;
+  background: cornflowerblue;
+  color: white;
+  padding: 8px 10px;
+  margin: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 footer {
   border-top:grey 2px solid;
 }
@@ -243,6 +254,13 @@ border-radius: 0.4rem;
     cursor: pointer;
 }
 
+.second h2{
+  color: bisque;
+}
+
+.providers {
+  color: white; 
+}
 
 /* .navbar ul:hover {
   cursor: pointer;

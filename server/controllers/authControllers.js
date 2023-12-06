@@ -134,6 +134,15 @@ res.json({ ok: true, user });
 
   }
 
+  const getProviders = async (req, res) => {
+    try {
+      const providers = await Provider.find();
+      res.json({ ok: true, providers });
+    } catch (error) {
+      console.log(error);
+      res.json({ ok: false, error });
+    }
+  };
 
   const updateUser = async (req, res) => {
 const { name, surname, address, contactNumber, description, services, email,type } = req.body;
@@ -168,7 +177,10 @@ update = await Clients.findOneAndUpdate({email}, {name, surname, address, contac
     });
   };
   
-  module.exports = { register, login, verify_token ,getCurrentUser, updateUser};
+  module.exports = { register, login, verify_token ,getCurrentUser, updateUser, getProviders };
 
 
 
+  
+  
+  

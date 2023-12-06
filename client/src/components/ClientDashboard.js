@@ -97,7 +97,7 @@ return (
 <option value="goldfish">Goldfish</option>
 </select>
 
-<button type="button" onClick={
+<button className="addButton" type="button" onClick={
 ()=>{
 console.log(form.services);
 let copy = [...form.services]

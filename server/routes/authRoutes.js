@@ -10,5 +10,6 @@ router.post('/login', controller.login);
 router.post('/verify_token', controller.verify_token);
 router.post('/getCurrent', controller.getCurrentUser);
 router.post('/updateUser', controller.updateUser);
+router.post('/getProviders', controller.getProviders);
 
 module.exports = router;
