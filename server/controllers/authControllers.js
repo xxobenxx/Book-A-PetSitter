@@ -144,13 +144,10 @@ try {
   if(type === 'client'){
 update = await Clients.findOneAndUpdate({email}, {name, surname, address, contactNumber, description, services}, {new: true})
   } else if(type === 'provider'){
- await Provider.findOneAndUpdate({email}, {name, surname, address, contactNumber, description, services:[]})
-update = await Provider.updateOne({email}, {$push: {
-    services: {
-      $each:[{service:'x',price:'25'}]
-    }
-  }
-  },{upsert:true})
+
+ update = await Provider.findOneAndUpdate({email}, { $set: {name, surname, address, contactNumber, description, services }},{new: true})
+
+
   }
   console.log(update);
   res.json({ ok: true, message: "User information updated" ,update});

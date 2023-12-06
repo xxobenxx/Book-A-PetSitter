@@ -13,8 +13,9 @@ const [form, setValues] = useState({
   address: '',
   contactNumber: '',
   description: '',
-  services: '',
+  services: [],
 });
+const [service,setService] = useState("")
 
 const [message, setMessage] = useState("");
 const [checked, setChecked] = useState(false)
@@ -46,46 +47,54 @@ fetchUser()
 },[])
 
 
-const update = async() => {
+const handleChange = (e) => {
+ 
+  setValues({ ...form, [e.target.name]: e.target.value });
+};
+const handleSubmit = async (e) => {
+		
+  e.preventDefault();
+
   try {
     let res = await axios.post(`${URL}/auth/updateUser`, {...form, ...user})
     console.log(res);
   } catch (error) {
     console.log(error);
   }
+
 }
 
   return (
     <div className="dashboard">
      
-      <h2>Dasboard for user with email: {user.email}</h2>
+      <h2>Dasboard for pet sitter with email: {user.email}</h2>
 
       {/* Provider Form */}
       <div align="center">
-      <form
-     >
+      <form onSubmit={handleSubmit} >
+
 
       <h1>PROVIDER INFORMATION</h1>
         <label>Name:</label>
-          <input value={form.name} type="text" />
+          <input value={form.name} type="text" name="name" onChange={handleChange}/>
       
         <label>Surname:</label>
-          <input value={form.surname} type="text" />
+          <input value={form.surname} type="text" name="surname"  onChange={handleChange}/>
   
         <label>Address:</label>
-          <input value={form.address} type="text" />
+          <input value={form.address} type="text" name="address"  onChange={handleChange} />
 
         <label>Contact Number:</label>
-          <input value={form.contactNumber} type="text" />
+          <input value={form.contactNumber} type="text" name="contactNumber" onChange={handleChange}/>
     
         <label>About:</label>
-        <textarea value={form.description}  rows="5" cols="33">
+        <textarea value={form.description}  rows="5" cols="33" name="description" onChange={handleChange}>
 </textarea>
 
 <div>
         <label>Services:</label>
 
-        <select>
+        <select onChange={(e)=>setService(e.target.value)}>
   <option value="">--Please choose an option--</option>
   <option value="dog">Dog</option>
   <option value="cat">Cat</option>
@@ -94,18 +103,24 @@ const update = async() => {
   <option value="spider">Spider</option>
   <option value="goldfish">Goldfish</option>
 </select>
-<button type="button">Add</button>
+
+<button type="button" onClick={
+()=>{
+  console.log(form.services);
+  let copy = [...form.services]
+  copy.push({service:service, price:""})
+  setValues(prevState=>({...prevState, services:copy}))
+}
+
+} >Add</button>
+
 </div>
+
 {form.services && form.services.length > 0 && form.services.map(service=>(
   <div className="service">{service.service}</div>
 )) }
-        {/* <div >
-          <input type="radio" name="serviceType" value="dog" /> Dog
-          <input type="radio" name="serviceType" value="cat" /> Cat
-          <input type="radio" name="ownerType" value="bird" /> Bird
-          <input type="radio" name="ownerType" value="reptile/amphibian/serpent" />  Reptile/Amphibian/Serpent 
-          <input type="radio" name="ownerType" value="banana" /> Banana
-          </div> */}
+    
+
           
          
         <button className="formButton" type="submit">save</button>
@@ -117,5 +132,6 @@ const update = async() => {
     </div>
   );
 };
+
 
 export default ProviderDashboard;

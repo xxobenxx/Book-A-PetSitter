@@ -11,7 +11,7 @@ const Dashboard = (props) => {
 
 
   if (type === 'client') {
-    return <ClientDashboard logout={props.logout}  />;
+    return <ClientDashboard logout={props.logout} user={props.user}  />;
   } else if (type === 'provider') {
     return <ProviderDashboard logout={props.logout} user={props.user}  />;
   } else {
