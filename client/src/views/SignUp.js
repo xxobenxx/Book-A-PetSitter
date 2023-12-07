@@ -60,14 +60,14 @@ const Signup = (props) => {
               <br />
 
               <div className="switchContainer">
-            <span>Client</span>
+            <span>Owner  </span>
             <SwitchButton
               boolean={checked}
               toggleFunction={handleSwitchChange}
               isDisabled={false}
             />
             
-            <span>Provider</span>
+            <span>  Pet Sitter</span>
           </div>	
           <div className={"inputContainer"}>
       <input
@@ -102,7 +102,7 @@ const Signup = (props) => {
      </div>
      <br />
 
-     <button type="submit">Submit</button>
+     <button className="btn" type="submit">Submit</button>
      </div>
 		</form>
         

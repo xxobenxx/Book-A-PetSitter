@@ -91,7 +91,7 @@ const Signin = (props) => {
         <br />
 
         <div className={"inputContainer"}>
-        <button type="submit">login</button>
+        <button className="btn" type="submit">login</button>
         </div>
         
         </div>

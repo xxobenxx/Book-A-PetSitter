@@ -40,23 +40,42 @@ const fetchUser = async() =>{
   }
 }
 
+const handleServiceClick = (index) => {
+  setValues((prevState) => {
+    const updatedServices = [...prevState.services];
+    updatedServices.splice(index, 1);
+
+
+    return { ...prevState, services: updatedServices };
+  });
+};
+
+const [updated, setUpdated] = useState(false);
 
 useEffect(() => {
   console.log(user);
 fetchUser()
 },[])
 
+useEffect(() => {
+  if (updated) {
+    const timeout = setTimeout(() => {
+      setUpdated(false);
+    }, 3000);
+    return () => clearTimeout(timeout); 
+  }
+}, [updated]);
+
 
 const handleChange = (e) => {
- 
-  setValues({ ...form, [e.target.name]: e.target.value });
+ setValues({ ...form, [e.target.name]: e.target.value });
 };
 const handleSubmit = async (e) => {
-		
-  e.preventDefault();
+		e.preventDefault();
 
   try {
     let res = await axios.post(`${URL}/auth/updateUser`, {...form, ...user})
+    setUpdated(true);
     console.log(res);
   } catch (error) {
     console.log(error);
@@ -66,13 +85,12 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="dashboard">
-     
-      <h2>Dasboard for pet sitter with email: {user.email}</h2>
+     <h2>Dasboard for pet sitter with email: {user.email}</h2>
 
       {/* Provider Form */}
       <div align="center">
       <form onSubmit={handleSubmit} >
-
+      {updated && <p >Updated successfully!</p>}
 
       <h1>PROVIDER INFORMATION</h1>
         <label>Name:</label>
@@ -91,9 +109,9 @@ const handleSubmit = async (e) => {
         <textarea value={form.description}  rows="5" cols="33" name="description" onChange={handleChange}>
 </textarea>
 
-<div>
-        <label>Services:</label>
 
+        <label>Services:</label>
+        <div className="select" >
         <select onChange={(e)=>setService(e.target.value)}>
   <option value="">--Please choose an option--</option>
   <option value="dog">Dog</option>
@@ -102,7 +120,8 @@ const handleSubmit = async (e) => {
   <option value="parrot">Parrot</option>
   <option value="spider">Spider</option>
   <option value="goldfish">Goldfish</option>
-</select>
+</select> 
+
 
 <button className="addButton" type="button" onClick={
   ()=>{
@@ -113,12 +132,21 @@ const handleSubmit = async (e) => {
 }
 
 }>Add</button>
+      </div>
 
-</div>
-
-{form.services && form.services.length > 0 && form.services.map(service=>(
-  <div className="service">{service.service}</div>
-)) }
+      {form.services && form.services.length > 0 && (
+        <div className="services-list">
+          {form.services.map((service, index) => (
+            <div
+              key={index}
+              className="service"
+              onClick={() => handleServiceClick(index)}
+            >
+              {service.service}
+            </div>
+          ))}
+        </div>
+      )}
     
 
           
@@ -128,7 +156,7 @@ const handleSubmit = async (e) => {
 
       </form>
       </div>
-      <button onClick={() => { logout(); navigate("/"); }}>Logout</button>
+      <button className="btn" onClick={() => { logout(); navigate("/"); }}>Logout</button>
     </div>
   );
 };

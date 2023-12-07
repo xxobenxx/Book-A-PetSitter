@@ -8,8 +8,7 @@ import BookNowResults from './BookNowResults';
 
 
 <Navbar />
-const Home = () => {
-    const [providers, setProviders] = useState([]);
+const Home = ({providers, setProviders}) => {
     const [showResults, setShowResults] = useState(false);
 
     const handleBookNow = async () => {
@@ -33,8 +32,8 @@ const Home = () => {
  <div className={"mainContainer"}>
        
   
-       <button type="button" className="btn" onClick={handleBookNow}>
-         Book now
+       <button type="button" className="bknbtn" onClick={handleBookNow}>
+         BOOK NOW
        </button>
  
        <div className="providers">

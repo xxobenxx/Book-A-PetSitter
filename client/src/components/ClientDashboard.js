@@ -40,10 +40,30 @@ const fetchUser = async() =>{
   }
 }
 
+const handleServiceClick = (index) => {
+  setValues((prevState) => {
+    const updatedServices = [...prevState.services];
+    updatedServices.splice(index, 1);
+    
+    return { ...prevState, services: updatedServices };
+  });
+};
+
+const [updated, setUpdated] = useState(false);
+
 useEffect(() => {
   console.log(user);
 fetchUser()
 },[])
+
+useEffect(() => {
+  if (updated) {
+    const timeout = setTimeout(() => {
+      setUpdated(false);
+    }, 3000);
+    return () => clearTimeout(timeout); 
+  }
+}, [updated]);
 
 const handleChange = (e) => {
   setValues({...form,[e.target.name]: e.target.value,});
@@ -54,6 +74,7 @@ e.preventDefault();
 
 try {
   let res = await axios.post(`${URL}/auth/updateUser`, {...form, ...user})
+  setUpdated(true);
   console.log(res);
 } catch (error) {
   console.log(error);
@@ -69,7 +90,7 @@ return (
     {/* Provider Form */}
     <div align="center">
     <form onSubmit={handleSubmit} >
-
+    {updated && <p >Updated successfully!</p>}
 
     <h1>CLIENT INFORMATION</h1>
       <label>Name:</label>
@@ -84,9 +105,9 @@ return (
       <label>Contact Number:</label>
         <input value={form.contactNumber} type="text" name="contactNumber" onChange={handleChange}/>
   
-<div>
-      <label>I am an owner of:</label>
 
+      <label>I am an owner of:</label>
+      <div className="select" >
       <select onChange={(e)=>setService(e.target.value)}>
 <option value="">--Please choose an option--</option>
 <option value="dog">Dog</option>
@@ -109,9 +130,19 @@ setValues(prevState=>({...prevState, services:copy}))
 
 </div>
 
-{form.services && form.services.length > 0 && form.services.map(service=>(
-<div className="service">{service.service}</div>
-)) }
+{form.services && form.services.length > 0 && (
+        <div className="services-list">
+          {form.services.map((service, index) => (
+            <div
+              key={index}
+              className="service"
+              onClick={() => handleServiceClick(index)}
+            >
+              {service.service}
+            </div>
+          ))}
+        </div>
+      )}
   
 
         
@@ -121,7 +152,7 @@ setValues(prevState=>({...prevState, services:copy}))
 
     </form>
     </div>
-    <button onClick={() => { logout(); navigate("/"); }}>Logout</button>
+    <button className="btn"  onClick={() => { logout(); navigate("/"); }}>Logout</button>
   </div>
 );
 };

@@ -13,7 +13,7 @@ const BookNowResults = ({ providers }) => {
         
          
           <div className="list" style={{ color: 'white' }}>
-            <Link to={`/provider/petsitter`} key={provider._id}><p>{provider.name} {provider.surname}</p>
+            <Link to={`/provider/${provider._id}`} key={provider._id}><p>{provider.name} {provider.surname}</p>
             </Link> 
             <ul>
               {provider.services && provider.services.map((service, index) => (

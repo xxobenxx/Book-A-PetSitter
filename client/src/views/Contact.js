@@ -63,8 +63,8 @@ const ContactForm = () => {
     </div>
     <br />
         
-    <div >
-    <button type=" submit">Submit</button>
+    <div className={"inputContainer"}>
+    <button className="btn" type=" submit">Submit</button>
     </div>
     </form>
     </div>

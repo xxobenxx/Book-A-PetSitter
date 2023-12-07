@@ -27,6 +27,7 @@ function App  ()  {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
+  const [providers, setProviders] = useState([]);
 
   useEffect(() => {
    
@@ -74,7 +75,7 @@ function App  ()  {
       <Router>
       <Navbar isLoggedIn={isLoggedIn} user={user} />
        <Routes>
-        <Route path ='/' element={<Home/>} />
+        <Route path ='/' element={<Home providers={providers}  setProviders={setProviders} />} />
 
         <Route
           path="/login"
@@ -95,7 +96,7 @@ function App  ()  {
         <Route
           path="/booknow" element={<BookNowResults/>} />
         
-        <Route path="/provider/petsitter" element={<ProviderPage />} />
+        <Route path="/provider/:petsitter" element={<ProviderPage providers={providers} />} />
 
         <Route
           path="/dashboard/:type"
