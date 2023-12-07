@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import Navbar from '../components/Navbar';
 import { URL } from  '../config'
 import axios from "axios";
+import BookNowResults from './BookNowResults';
+
+
 
 
 <Navbar />
 const Home = () => {
     const [providers, setProviders] = useState([]);
-  
+    const [showResults, setShowResults] = useState(false);
+
     const handleBookNow = async () => {
       try {
         const response = await axios.post(`${URL}/auth/getProviders`);
@@ -15,7 +19,7 @@ const Home = () => {
   
         if (data.ok) {
           setProviders(data.providers);
-          
+          setShowResults(true);
         } else {
           console.error("Failed to fetch providers:", data.error);
         }
@@ -25,26 +29,26 @@ const Home = () => {
     };
   
     return (
-      <div className={"mainContainer"}>
+       
+ <div className={"mainContainer"}>
        
   
-        <button type="button" className="btn" onClick={handleBookNow}>
-          Book now
-        </button>
-  
-        <div className="providers">
-      <h2 style={{color: 'white'}}>Providers</h2>
-      </div>
-        {providers.map((provider) => (
-          <div key={provider._id} style={{color: 'white'}}>
-           {provider.name} 
-          </div>
-        ))}
-      </div>
-    );
-  };
-
+       <button type="button" className="btn" onClick={handleBookNow}>
+         Book now
+       </button>
+ 
+       <div className="providers">
+    
+     </div>
+     {showResults && <BookNowResults providers={providers} />}
+       
+       
+     </div>
+   );
+ };
+ 
   export default Home;
 
 
 
+     

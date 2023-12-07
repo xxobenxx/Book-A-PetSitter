@@ -18,7 +18,10 @@ import Help from './views/Help';
 import Dashboard from './views/Dashboard';
 import Contact from './views/Contact';
 import Navbar from './components/Navbar';
-import Footer from './components/footer';
+import Footer from './components/footer'
+import BookNowResults from './views/BookNowResults';
+import ProviderPage from './views/ProviderPage'; 
+
 
 function App  ()  {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
@@ -88,6 +91,11 @@ function App  ()  {
           path="/register"
           element={isLoggedIn ? <Navigate to="/dashboard/:type" /> : <SignUp />}
         />
+
+        <Route
+          path="/booknow" element={<BookNowResults/>} />
+        
+        <Route path="/provider/petsitter" element={<ProviderPage />} />
 
         <Route
           path="/dashboard/:type"
