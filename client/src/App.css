@@ -181,6 +181,16 @@ button.btn {
     cursor: pointer;
 }
 
+.bknbtn1{
+  border: none;
+   background-color:  cornflowerblue;
+    color: white;
+    padding: 12px 24px;
+    font-size: 26px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 button {
   border: none;
    background-color:  cornflowerblue;

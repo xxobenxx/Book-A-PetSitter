@@ -93,7 +93,7 @@ const [showTime, setShowTime] = useState(false)
   
        
   
-       <button type="button" className="bknbtn" >
+       <button type="button" className="bknbtn1" >
          BOOK NOW
        </button>
  
