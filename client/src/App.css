@@ -224,7 +224,7 @@ footer {
 }
 
 footer ul{
-  padding-inline-start: 1px;
+  padding-inline-start: 2px;
   display: flex;
   flex-direction: column;
 align-items: flex-start;
