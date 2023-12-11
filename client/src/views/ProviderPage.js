@@ -3,6 +3,9 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import banana from '../images/banana.jpeg';
 import { useParams } from 'react-router-dom';
+import Calendar from 'react-calendar';
+import Time from '../components/Time.js';
+import {useState} from 'react';
 
 function ProviderPage({ providers }) {
   
@@ -11,6 +14,9 @@ function ProviderPage({ providers }) {
 
   const singleProvider = providers.find(provider => provider._id === params.petsitter)
 console.log(singleProvider);
+
+const [date, setDate] = useState(new Date());
+const [showTime, setShowTime] = useState(false)
   
 
 
@@ -62,14 +68,36 @@ console.log(singleProvider);
 </div>
 </div>
 
+<div className='calendar'>
+   <h1 className='header'> Calendar</h1>
+   <div>
+    <Calendar onChange={setDate} value={date} onClickDay={() => setShowTime(true)}/>
+   </div>
+   {date.length > 0 ? (
+   <p>
+     <span>Start:</span>
+     {date[0].toDateString()}
+     &nbsp;
+     &nbsp;
+     <span>End:</span>{date[1].toDateString()}
+   </p>
+          ) : (
+   <p>
+      <span>Default selected date:</span>{date.toDateString()}
+   </p> 
+          )
+   }
+   <Time showTime={showTime} date={date}/>
 
+ 
+  
        
   
        <button type="button" className="bknbtn" >
          BOOK NOW
        </button>
  
-       
+       </div>
 
 
 		</div>

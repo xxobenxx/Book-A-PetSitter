@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = ()=> <footer>
     <ul>
-<li>El Turco Productions. </li>
+<li>El Turco Services </li>
 <li>All rights reserved 2023.</li>
 <li>T : +34 600 793 638</li>
 <li>@: kerken[at]gmail</li>

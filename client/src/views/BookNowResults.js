@@ -15,6 +15,7 @@ const BookNowResults = ({ providers }) => {
           <div className="list" style={{ color: 'white' }}>
             <Link to={`/provider/${provider._id}`} key={provider._id}><p>{provider.name} {provider.surname}</p>
             </Link> 
+            <h3 style={{color: 'white'}}>Services:</h3 >
             <ul>
               {provider.services && provider.services.map((service, index) => (
                 <li key={index}>{service.service}</li>
