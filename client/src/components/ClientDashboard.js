@@ -90,7 +90,7 @@ return (
     {/* Provider Form */}
     <div align="center">
     <form onSubmit={handleSubmit} >
-    {updated && <p >Updated successfully!</p>}
+    {updated && <h4 style={{color: 'red'}}>Updated successfully!</h4>}
 
     <h1>CLIENT INFORMATION</h1>
       <label>Name:</label>
@@ -132,6 +132,7 @@ setValues(prevState=>({...prevState, services:copy}))
 
 {form.services && form.services.length > 0 && (
         <div className="services-list">
+          <p> (Click on the service to remove)</p>
           {form.services.map((service, index) => (
             <div
               key={index}
