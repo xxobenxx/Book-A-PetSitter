@@ -87,7 +87,7 @@ const [showTime, setShowTime] = useState(false)
    </p> 
           )
    }
-   <Time showTime={showTime} date={date}/>
+   <Time showTime={showTime} date={date}/> <br/>
 
  
   
