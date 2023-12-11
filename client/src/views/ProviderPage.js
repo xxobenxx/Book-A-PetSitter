@@ -28,7 +28,7 @@ const [showTime, setShowTime] = useState(false)
 		<div class="providerContainer">
 			<div class="container" >
 <div class="row" >
-    <div class="profile">
+    <div class="col-lg-8 col-md-8  col-xs-12">
     <div class="panel panel-default plain profile-panel">
         <div class="panel-heading white-content p-left p-right">
            
