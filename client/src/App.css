@@ -220,6 +220,7 @@ f
 
 footer {
   border-top:grey 2px solid;
+  padding-inline-start: 0px;
 }
 
 footer ul{
@@ -352,39 +353,6 @@ button.formButton {
 .list p:hover {
   color: red
 }
-
-.container {
-}
-
-
-/* .navbar ul:hover {
-  cursor: pointer;
-  justify-content:space-between;
-}
-
-.navbar ul {
-  display: flex;
-  justify-content:space-between;
-  flex-direction: row;
-  list-style-type: none;
-}
-
-
-
-.navbar1 {
-  display: flex;
-  justify-content:space-evenly;
-  flex-direction: row;
-}
-
-.navbar2 {
-  display: flex;
-  justify-content:space-evenly;
-  flex-direction: row;
-  margin-right: 4vh;
-} */
- 
-
 
 
     
