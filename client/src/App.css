@@ -214,6 +214,10 @@ f
   cursor: pointer;
 }
 
+.service:hover {
+  cursor: pointer;
+}
+
 footer {
   border-top:grey 2px solid;
 }

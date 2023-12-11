@@ -132,6 +132,7 @@ const handleSubmit = async (e) => {
 }
 
 }>Add</button>
+<p> Click on the service to remove</p>
       </div>
 
       {form.services && form.services.length > 0 && (
