@@ -370,7 +370,7 @@ button.formButton {
 }
 
 .panel-footer {
-  padding: 0px 15px;
+  padding: 0px 5px;
   background-color: #f3f5f6;
   border-top: 1px solid #ddd;
 }
@@ -416,7 +416,7 @@ width: 25%;}
 
 .profile-panel .profile-avatar {
   border-radius: 50%;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #e7e7e2;
   float: left;
 }
@@ -427,7 +427,7 @@ width: 25%;}
 }
 
 .panel-body {
-  padding: 10px;
+  padding: 5px;
 }
 
 .profile-panel .profile-image {
