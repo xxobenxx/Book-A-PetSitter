@@ -440,6 +440,9 @@ button.formButton {
   border: 1px solid #e7e7e2;
 }
 
+.imgProvider {border-radius: 40%;
+  border: 1px solid #e7e7e2;}
+
 .profile-panel .profile-avatar {
   border-radius: 50%;
   padding: 10px;

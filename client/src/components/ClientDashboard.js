@@ -2,6 +2,7 @@ import React, {useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { URL } from  '../config'
 import axios from 'axios';
+import banana from '../images/banana.jpeg';
 
   const ClientDashboard = ({ logout,user }) => {
   const navigate = useNavigate(); 
@@ -93,6 +94,7 @@ return (
     {updated && <h4 style={{color: 'red'}}>Updated successfully!</h4>}
 
     <h1>CLIENT INFORMATION</h1>
+    <img src={banana} alt="Profile" />
       <label>Name:</label>
         <input value={form.name} type="text" name="name" onChange={handleChange}/>
     
