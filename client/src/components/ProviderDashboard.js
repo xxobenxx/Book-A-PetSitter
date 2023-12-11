@@ -86,14 +86,15 @@ const handleSubmit = async (e) => {
   return (
     <div className="dashboard">
      <h2>Dasboard for pet sitter with email: {user.email}</h2>
-
+     <div align="center">
+      
       {/* Provider Form */}
-      <div align="center">
+      
       <form onSubmit={handleSubmit} >
       {updated && <h4 style={{color: 'red'}}>Updated successfully!</h4>}
 
       <h1>PROVIDER INFORMATION</h1>
-     <div className="imgProvider" > <img  src={banana} alt="Profile" /></div>
+     <img className="imgProvider"  src={banana} alt="Profile" />
      
 
         <label>Name:</label>
