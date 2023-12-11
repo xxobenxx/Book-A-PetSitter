@@ -93,7 +93,7 @@ const handleSubmit = async (e) => {
       {updated && <h4 style={{color: 'red'}}>Updated successfully!</h4>}
 
       <h1>PROVIDER INFORMATION</h1>
-      <img className="imgProvider"  src={banana} alt="Profile" />
+     <div className="imgProvider" > <img  src={banana} alt="Profile" /></div>
      
 
         <label>Name:</label>
