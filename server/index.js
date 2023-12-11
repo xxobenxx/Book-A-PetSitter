@@ -27,10 +27,17 @@ async function connecting(){
     }
 
     app.use('/auth', require('./routes/authRoutes'));
-    // app.use('/client', require('./routes/clientRoute'));
-    // app.use('/provider', require('./routes/providerRoute'));
     
     
+    const path = require('path');
+
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
 
 connecting().then(()=>{
     app.listen(4001, () => console.log(`listening on port 4001`))
