@@ -131,7 +131,7 @@ const handleSubmit = async (e) => {
   setValues(prevState=>({...prevState, services:copy}))
 }
 
-}>Add</button> <br />
+}>Add</button> <br/>
 <p> Click on the service to remove</p>
       </div>
 
