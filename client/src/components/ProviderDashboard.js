@@ -90,7 +90,7 @@ const handleSubmit = async (e) => {
       {/* Provider Form */}
       <div align="center">
       <form onSubmit={handleSubmit} >
-      {updated && <p style={{color: 'red'}}>Updated successfully!</p>}
+      {updated && <div style={{color: 'red'}}>Updated successfully!</div>}
 
       <h1>PROVIDER INFORMATION</h1>
         <label>Name:</label>
