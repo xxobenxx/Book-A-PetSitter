@@ -94,7 +94,7 @@ return (
     {updated && <h4 style={{color: 'red'}}>Updated successfully!</h4>}
 
     <h1>CLIENT INFORMATION</h1>
-    <img src={banana} alt="Profile" />
+    <img className="imgProvider" src={banana} alt="Profile" />
       <label>Name:</label>
         <input value={form.name} type="text" name="name" onChange={handleChange}/>
     
