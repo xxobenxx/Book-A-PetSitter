@@ -132,12 +132,13 @@ const handleSubmit = async (e) => {
 }
 
 }>Add</button> 
-<br/>
-<p> Click on the service to remove</p>
+
+
       </div>
 
       {form.services && form.services.length > 0 && (
         <div className="services-list">
+          <p> Click on the service to remove</p>
           {form.services.map((service, index) => (
             <div
               key={index}
