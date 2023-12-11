@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { URL } from  '../config'
 import axios from 'axios';
-
+import banana from '../images/banana.jpeg';
 
 const ProviderDashboard = ({ logout,user }) => {
 const navigate = useNavigate(); 
@@ -93,6 +93,9 @@ const handleSubmit = async (e) => {
       {updated && <h4 style={{color: 'red'}}>Updated successfully!</h4>}
 
       <h1>PROVIDER INFORMATION</h1>
+      <img src="../images/banana.jpeg" alt="Profile Picture" />
+     
+
         <label>Name:</label>
           <input value={form.name} type="text" name="name" onChange={handleChange}/>
       
