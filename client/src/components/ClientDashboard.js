@@ -134,7 +134,7 @@ setValues(prevState=>({...prevState, services:copy}))
 
 {form.services && form.services.length > 0 && (
         <div className="services-list">
-          <p> (Click on the service to remove)</p>
+          <p> (Click on the selected to remove)</p>
           {form.services.map((service, index) => (
             <div
               key={index}
