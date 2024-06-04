@@ -4,14 +4,17 @@
     "description": "",
     "main": "./server/index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "cd ./server && node index.js",
-      "build": "cd ./server && npm i"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cd ./server && node index.js",
+        "build": "cd ./server && npm i"
     },
     "engines": {
-      "node": "18.x"
+        "node": "18.x"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
-  }
+    "license": "ISC",
+    "dependencies": {
+        "start": "^5.1.0"
+    }
+}
