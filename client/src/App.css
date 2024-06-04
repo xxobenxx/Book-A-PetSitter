@@ -147,13 +147,16 @@ margin: 10px;
 }
 
 .inputBox {
-  height: 48px;
-  width: 400px;
+  height: 10vw;
+  width: 80vw;
+  max-width: 400px;
+  max-height: 48px;
   font-size: large;
   border-radius: 8px;
   border: 1px solid grey;
   padding-left: 8px;
 }
+
 
 button.btn {
   border: none;
@@ -252,8 +255,10 @@ align-content: center;
 }
 
 .messageBox {
-  height: 80px;
-  width: 400px;
+  height: 30vw;
+  width: 80vw;
+  max-width: 400px;
+  max-height: 80px;
   font-size: large;
   border-radius: 8px;
   border: 1px solid grey;
