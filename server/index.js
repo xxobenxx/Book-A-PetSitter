@@ -39,7 +39,7 @@ app.get('/*', function (req, res) {
 });
 
 
-const PORT = process.env.PORT || 4001; // Use the PORT provided by Heroku
+const PORT = process.env.PORT || 3000; // Use the PORT provided by Heroku
 
 connecting().then(() => {
     app.listen(PORT, () => console.log(`listening on port ${PORT}`));
