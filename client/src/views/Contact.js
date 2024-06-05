@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 
 
@@ -7,9 +8,25 @@ const ContactForm = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
+    const templateParams = {
+      name: name,
+      email: email,
+      message: message,
+  };
+
     const onSubmit = (e) => {
-    e.preventDefault();
-    console.log("Name:", email, "Message:" , message);
+      e.preventDefault();
+      
+      // Send email using EmailJS
+      emailjs.send("service_thq5msm", "template_0lcovyq", templateParams,'qWfnP5c_MOuFQN9Sx' )
+            .then(function (response) {
+                console.log('Email sent successfully:', response);
+                alert('🌟 Thank you for reaching out! We will do our best to respond to your inquiry promptly. ');
+            })
+            .catch(function (error) {
+                console.error('Error sending email:', error);
+               
+            });
     };
 
 

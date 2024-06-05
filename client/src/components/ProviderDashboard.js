@@ -85,7 +85,10 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="dashboard">
-     <h2>Dasboard for pet sitter with email: {user.email}</h2>
+     <h2 align="center">Dashboard for pet sitter with email: {user.email}</h2>
+
+
+
      <div align="center">
       
       {/* Provider Form */}
@@ -116,8 +119,8 @@ const handleSubmit = async (e) => {
 
         <label>Services:</label>
         <div className="select" >
-        <select onChange={(e)=>setService(e.target.value)}>
-  <option value="">--Please choose an option--</option>
+        <select  onChange={(e)=>setService(e.target.value)}>
+  <option value="" >--Please choose an option--</option>
   <option value="dog">Dog</option>
   <option value="cat">Cat</option>
   <option value="hamster">Hamster</option>

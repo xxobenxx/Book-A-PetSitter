@@ -18,7 +18,7 @@ const Signin = (props) => {
 
 
     const [message, setMessage] = useState("");
-    
+    const [error, setError] = useState(""); 
     
     const navigate = useNavigate();
     const handleChange = (e) => {
@@ -52,7 +52,9 @@ const Signin = (props) => {
           }, 2000);
         }
       } catch (error) {
+
         console.log(error);
+        alert('No users found. Please review your email or password ');
       }
     };
 

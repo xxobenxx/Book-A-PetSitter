@@ -71,12 +71,37 @@
   justify-content: center;
   height: 100vh;
 
-background-image: url(https://source.unsplash.com/random?wallpapers/pets);
+background-image: url(https://source.unsplash.com/random?wallpapers/pet);
 background-size: auto;
 background-repeat: no-repeat;
 background-position: center;
 margin: 10px;
 }
+
+.book-now-results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   flex:1;
+   overflow-y: auto; 
+   max-height: 50%;
+   
+   
+
+}
+
+.book-now-results {
+  display: flex;
+  flex-direction: column;
+  background-color: #a5aec0;
+  font-size: medium;
+  max-height: auto; 
+  padding: 10px;
+
+  
+}
+
+
 
 .titleContainer {
   display: flex;
@@ -240,6 +265,7 @@ align-items: flex-start;
   justify-content: center;
   height: 100vh;
   margin: 10px;
+  
 
 
 background-image: url(https://source.unsplash.com/random?wallpapers/touch);
@@ -254,6 +280,7 @@ justify-content: space-around;
 align-content: center;
 }
 
+
 .messageBox {
   height: 30vw;
   width: 80vw;
@@ -267,13 +294,25 @@ align-content: center;
 
 .helpwrapper{
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-.helppic {
-  display: flex;
-  justify-content: left;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 10px;
+
+background-size: auto;
+background-repeat: no-repeat;
+background-position: center;
+height: auto;
+
+}
+
+.helppic {
+
+  height: auto;
+  max-height: 100vh;
+  max-width: 100%;
+ 
+ 
 }
 
 .switchContainer {
@@ -287,9 +326,10 @@ align-content: center;
   justify-content: center;
   border:#3F5EFB 2px solid; 
   height:auto;
-  width: 700px;
+  
  margin: 20px;
  background-color: white;
+ padding: 2%;
   
 }
 

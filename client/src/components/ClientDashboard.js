@@ -85,7 +85,7 @@ try {
 return (
   <div className="dashboard">
    
-    <h2>Dasboard for pet owner with email: {user.email}</h2>
+    <h2 align="center">Dashboard for pet owner with email: {user.email}</h2>
 
 
     {/* Provider Form */}
