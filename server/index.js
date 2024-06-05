@@ -39,7 +39,8 @@ app.get('/*', function (req, res) {
 });
 
 
+const PORT = process.env.PORT || 4001; // Use the PORT provided by Heroku
+
 connecting().then(() => {
-    const PORT = process.env.PORT || 4001; // Use the port provided by Heroku or default to 4001
     app.listen(PORT, () => console.log(`listening on port ${PORT}`));
-})
+});
