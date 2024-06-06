@@ -53,15 +53,52 @@
 }
 
 .providerContainer {
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
-  justify-content: left;
-  align-items:flex-start;
-  height: auto;
-  flex-wrap: wrap;
+  padding: 20px;
+  
+  align-items:center;
   margin-bottom: 2%;
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile-panel {
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+}
+
+.panel-heading {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.time{
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-stats-info{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 .mainContainer {
@@ -84,7 +121,7 @@ margin: 10px;
   align-items: center;
    flex:1;
    overflow-y: auto; 
-   max-height: 50%;
+   max-height: 43%;
    
    
 
@@ -463,13 +500,17 @@ width: 25%;}
   float: left;
 }
 
-.panel-default .panel-body {
+/* .panel-default .panel-body {
   border: 1px solid #e4e9eb;
   border-top: none;
-}
+} */
 
 .panel-body {
-  padding: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .profile-panel .profile-image {
@@ -478,11 +519,12 @@ width: 25%;}
 }
 
 .panel {
-  position: relative;
-  margin-bottom: 25px;
-  border-radius: 4px;
-  border: 0;
-  box-shadow: none;
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
 } 
 
 .panel-default {
@@ -543,12 +585,13 @@ width: 25%;}
 
 .times {
   display: flex;
-  flex-direction: row;
-  align-items: end;
+  flex-wrap: wrap;
+  
+  
 }
 
 .react-calendar { 
-  width: 700px;
+  
   max-width: 100%;
   background-color: rgb(131, 125, 125);
   color: white;
@@ -559,10 +602,6 @@ width: 25%;}
   
  }
 
-
- .calendar {
-  margin-left: 7%;
- }
 
  .react-calendar__navigation button {
   color: white;

@@ -17,6 +17,7 @@ function ProviderPage({ providers }) {
   const [date, setDate] = useState(new Date());
   const [showTime, setShowTime] = useState(false);
   const [selectedTime, setSelectedTime] = useState(null);
+  const [likes, setLikes] = useState(singleProvider.likes || 60); 
 
   const handleBooking = () => {
     if (selectedTime) {
@@ -26,18 +27,23 @@ function ProviderPage({ providers }) {
     }
   };
 
+  const handleLike = () => {
+    setLikes(prevLikes => prevLikes + 1);
+  };
+
   return (
     <div className="providerContainer">
+
       <div className="container">
-        <div className="row">
+        <div className="card">
           <div className="col-lg-8 col-md-8 col-xs-12">
             <div className="panel panel-default plain profile-panel">
               <div className="panel-heading white-content p-left p-right">
               </div>
-              <div className="panel-body">
+              <div className="panel-body" style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between'}}>
                 <div className="col-lg-4 col-md-4 col-sm-12">
                   <div className="profile-avatar">
-                    <img className="img-responsive" src={banana} alt="User" />
+                    <img className="img-responsive" src={banana} alt="User" style={{ width: '50vh' }} />
                   </div>
                 </div>
                 <div className="col-lg-8 col-md-8 col-sm-12">
@@ -48,9 +54,9 @@ function ProviderPage({ providers }) {
                     <p>{singleProvider.description}</p>
                   </div>
                   <div className="profile-stats-info">
-                    <a href="#/" title="Views"><i className="glyphicon glyphicon-eye-open"></i> <strong>2000</strong></a>
+                    <a href="#/" title="Views"><i className="glyphicon glyphicon-eye-open"></i> <strong>200</strong></a>
                     <a href="#/" title="Comments"><i className="glyphicon glyphicon-comment"></i> <strong>120</strong></a>
-                    <a href="#/" title="Likes"><i className="glyphicon glyphicon-thumbs-up"></i> <strong>60</strong></a>
+                    <a href="#/" title="Likes"onClick={handleLike}><i className="glyphicon glyphicon-thumbs-up"></i> <strong>{likes}</strong></a>
                   </div>
                 </div>
               </div>
@@ -84,11 +90,12 @@ function ProviderPage({ providers }) {
             <span>Default selected date:</span>{date.toDateString()}
           </p>
         )}
-        <Time showTime={showTime} date={date} setSelectedTime={setSelectedTime} /><br />
+        <Time showTime={showTime} date={date} setSelectedTime={setSelectedTime} className="time" /><br />
 
         <button type="button" className="bknbtn1" onClick={handleBooking}>
           BOOK NOW
         </button>
+        
       </div>
     </div>
   );
