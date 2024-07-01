@@ -107,12 +107,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-
-background-image: url(https://source.unsplash.com/random?wallpapers/pet);
-background-size: auto;
-background-repeat: no-repeat;
-background-position: center;
-margin: 10px;
+  margin: 10px;
 }
 
 .book-now-results-container {
@@ -355,6 +350,7 @@ height: auto;
 .switchContainer {
   color: white;
   font-size: 25px;
+  text-shadow: 2px 2px 4px #000000;
 }
 .dashboard form {
   display: flex;

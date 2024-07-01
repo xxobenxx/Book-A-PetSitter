@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 // import jwt from 'jsonwebtoken'
 // react-scripts from version 5 shipped with react 18 is not supporting jsonwebtoken so we need to use alternative like jose to decode the JWT token in the client
 import * as jose from "jose";
+import bckgrndImg3 from '../images/karsten-winegeart-uge9QXIreS4-unsplash.jpg';
 
 
 
@@ -64,7 +65,21 @@ const Signin = (props) => {
         onChange={handleChange}
        >
 
-         <div className={"mainContainer"}>
+      <div 
+         className={"mainContainer"} 
+         style={{
+           backgroundImage: `url(${bckgrndImg3})`,
+           backgroundSize: 'contain', 
+           backgroundRepeat: 'no-repeat', 
+           backgroundPosition: 'center',
+           display: 'flex',
+           flexDirection: 'column',
+           alignItems: 'center',
+           justifyContent: 'center',
+           height: '100vh',
+           margin: '10px'
+         }}
+       >
 
          <div className={"titleContainer"}>
              <div>Hello</div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import bckgrndImg4 from '../images/daniel-lincoln-L4HuAYnIZkY-unsplash.jpg';
 
 
 
@@ -32,7 +33,19 @@ const ContactForm = () => {
 
 
   return (
-    <div className="contactContainer">
+    <div className="contactContainer"
+    style={{
+      backgroundImage: `url(${bckgrndImg4})`,
+      backgroundSize: 'contain', 
+      backgroundRepeat: 'no-repeat', 
+      backgroundPosition: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+      margin: '10px'
+    }}>
 
       <div className="titleContainer">
       Contact Us

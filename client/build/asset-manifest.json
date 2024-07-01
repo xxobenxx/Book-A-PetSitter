@@ -1,8 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.dacfbda6.css",
-    "main.js": "/static/js/main.04755ad2.js",
+    "main.css": "/static/css/main.75697c94.css",
+    "main.js": "/static/js/main.3cad0960.js",
     "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
+    "static/media/nab-nas-Z_l26KfkSzc-unsplash.jpg": "/static/media/nab-nas-Z_l26KfkSzc-unsplash.855db95b55240a680274.jpg",
+    "static/media/daniel-lincoln-L4HuAYnIZkY-unsplash.jpg": "/static/media/daniel-lincoln-L4HuAYnIZkY-unsplash.b7a861bbef2a3b693d9c.jpg",
+    "static/media/nataliia-kvitovska-dKvtLHDH5A0-unsplash.jpg": "/static/media/nataliia-kvitovska-dKvtLHDH5A0-unsplash.25b8e43e14fac8e29e98.jpg",
+    "static/media/karsten-winegeart-uge9QXIreS4-unsplash.jpg": "/static/media/karsten-winegeart-uge9QXIreS4-unsplash.1cda40027c4d8170e575.jpg",
     "static/media/helpteam.jpg": "/static/media/helpteam.5555ebb1169966c26a67.jpg",
     "static/media/glyphicons-halflings-regular.svg": "/static/media/glyphicons-halflings-regular.864c2bdfdea09ee84833.svg",
     "static/media/glyphicons-halflings-regular.ttf": "/static/media/glyphicons-halflings-regular.b7c243015cec15850248.ttf",
@@ -10,12 +14,12 @@
     "static/media/glyphicons-halflings-regular.woff": "/static/media/glyphicons-halflings-regular.e3cab037268b4e02bef8.woff",
     "static/media/glyphicons-halflings-regular.eot": "/static/media/glyphicons-halflings-regular.2810d2a49be3af435f61.eot",
     "index.html": "/index.html",
-    "main.dacfbda6.css.map": "/static/css/main.dacfbda6.css.map",
-    "main.04755ad2.js.map": "/static/js/main.04755ad2.js.map",
+    "main.75697c94.css.map": "/static/css/main.75697c94.css.map",
+    "main.3cad0960.js.map": "/static/js/main.3cad0960.js.map",
     "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dacfbda6.css",
-    "static/js/main.04755ad2.js"
+    "static/css/main.75697c94.css",
+    "static/js/main.3cad0960.js"
   ]
 }

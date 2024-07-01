@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import { URL } from  '../config'
 import axios from "axios";
 import BookNowResults from './BookNowResults';
-
+import bckgrndImg from '../images/nataliia-kvitovska-dKvtLHDH5A0-unsplash.jpg';
 
 
 
@@ -29,7 +29,21 @@ const Home = ({providers, setProviders}) => {
   
     return (
        
- <div className={"mainContainer"}>
+      <div 
+      className={"mainContainer"} 
+      style={{
+        backgroundImage: `url(${bckgrndImg})`,
+        backgroundSize: 'contain', 
+        backgroundRepeat: 'no-repeat', 
+        backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        margin: '10px'
+      }}
+    >
        
   
        <button type="button" className="bknbtn" onClick={handleBookNow}>

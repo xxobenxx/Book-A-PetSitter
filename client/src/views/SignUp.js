@@ -3,6 +3,7 @@ import axios from 'axios';
 import { URL } from  '../config'
 import {useNavigate} from 'react-router-dom'
 import SwitchButton from "../components/SwitchButton";
+import bckgrndImg2 from '../images/nab-nas-Z_l26KfkSzc-unsplash.jpg';
 
 
 
@@ -53,7 +54,21 @@ const Signup = (props) => {
 
   return (
           <form onSubmit={handleSubmit} onChange={handleChange}>
-          <div className={"mainContainer"}>
+          <div 
+         className={"mainContainer"} 
+         style={{
+           backgroundImage: `url(${bckgrndImg2})`,
+           backgroundSize: 'contain', 
+           backgroundRepeat: 'no-repeat', 
+           backgroundPosition: 'center',
+           display: 'flex',
+           flexDirection: 'column',
+           alignItems: 'center',
+           justifyContent: 'center',
+           height: '100vh',
+           margin: '10px'
+         }}
+       >
                   <div className={"titleContainer"}>
               <div>Sign up</div>
               </div>
