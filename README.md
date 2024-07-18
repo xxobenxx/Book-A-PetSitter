@@ -1,4 +1,4 @@
-## Book a Pet Sitter Web App
+# Book a Pet Sitter Web App
 
 
 This repository contains a full-stack web application with user registration, login, and personalized dashboards. 
