@@ -1,4 +1,4 @@
-#Book a Pet Sitter Web App
+## Book a Pet Sitter Web App
 
 
 This repository contains a full-stack web application with user registration, login, and personalized dashboards. 
@@ -15,7 +15,7 @@ It is divided into two main directories:
 - **client**  : Contains the React frontend code.
 - **server**: Contains the Node.js backend code using Express, which handles API requests and connects to the MongoDB database.
 
-## Installation
+# Installation
 
 Follow these steps to install and set up the application on your local machine:
 
@@ -39,13 +39,15 @@ Create a .env file in the server directory and add your MongoDB (or other databa
 MONGO_URI=mongodb://your_mongodb_uri
 ```
 
-## Running The Application
+# Running The Application
 
 ```sh
    cd server -> npm start ( ensure the connection with the database)
    cd ../client -> npm expo start
    
 ```
+
+# Or directly review the [Web Site](https://book-a-petsitter-demo.surge.sh/)
 
 
 
