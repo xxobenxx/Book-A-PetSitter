@@ -39,7 +39,7 @@ Create a .env file in the provider directory and add your MongoDB (or other data
 MONGO_URI=mongodb://your_mongodb_uri
 ```
 
-2. **Running the application**
+## Running The Application
 
 ```sh
    cd provider -> npm start ( ensure the connection with the database)
