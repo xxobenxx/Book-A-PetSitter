@@ -13,7 +13,7 @@ MongoDB database for login and registration functionalities.
 It is divided into two main directories:
 
 - **client**  : Contains the React frontend code.
-- **provider**: Contains the Node.js backend code using Express, which handles API requests and connects to the MongoDB database.
+- **server**: Contains the Node.js backend code using Express, which handles API requests and connects to the MongoDB database.
 
 ## Installation
 
@@ -25,7 +25,7 @@ Follow these steps to install and set up the application on your local machine:
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name 
    cd client -> npm install
-   cd ../provider -> npm install
+   cd ../server -> npm install
 ```
 Ensure you have Expo CLI installed. If not, install it using npm in main folder:
 
@@ -34,7 +34,7 @@ npm install -g expo-cli
 ```
 
 2. **Configure the environment variables**
-Create a .env file in the provider directory and add your MongoDB (or other database) connection string:
+Create a .env file in the server directory and add your MongoDB (or other database) connection string:
 ```sh
 MONGO_URI=mongodb://your_mongodb_uri
 ```
@@ -42,7 +42,7 @@ MONGO_URI=mongodb://your_mongodb_uri
 ## Running The Application
 
 ```sh
-   cd provider -> npm start ( ensure the connection with the database)
+   cd server -> npm start ( ensure the connection with the database)
    cd ../client -> npm expo start
    
 ```
