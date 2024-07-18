@@ -15,7 +15,7 @@ It is divided into two main directories:
 - **client**  : Contains the React frontend code.
 - **server**: Contains the Node.js backend code using Express, which handles API requests and connects to the MongoDB database.
 
-# Installation
+## Installation
 
 Follow these steps to install and set up the application on your local machine:
 
