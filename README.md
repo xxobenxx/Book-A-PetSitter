@@ -39,7 +39,7 @@ Create a .env file in the server directory and add your MongoDB (or other databa
 MONGO_URI=mongodb://your_mongodb_uri
 ```
 
-# Running The Application
+## Running The Application
 
 ```sh
    cd server -> npm start ( ensure the connection with the database)
