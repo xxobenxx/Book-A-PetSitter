@@ -7,7 +7,7 @@ Sign Up page includes Pet Sitter & Pet Owner switch button to decompose user das
 This project demonstrates my ability to create user-friendly, role-specific interfaces and integrate seamless scheduling features.
 
 Tools Used:
-Javascript, React.js, Node.js, Express
+JS, React.js, Node.js, Express
 MongoDB database for login and registration functionalities.
 
 It is divided into two main directories:
